@@ -1,0 +1,55 @@
+Id,type,description
+RF-001,functional,El usuario puede crear múltiples proyectos independientes desde la barra lateral de la aplicación.
+RF-002,functional,El usuario puede visualizar y acceder a sus proyectos previamente creados desde una lista paginada en la barra lateral.
+RF-003,functional,El usuario puede editar libremente el contenido de cualquier sección de un proyecto.
+RF-004,functional,El usuario puede solicitar la regeneración de una sección específica indicando los cambios deseados en lenguaje natural.
+RF-005,functional,El usuario puede iniciar un proyecto proporcionando un prompt descriptivo inicial.
+RF-006,functional,El sistema solicita preguntas de aclaración al usuario cuando el prompt inicial no es suficientemente específico para generar documentación.
+RF-007,functional,El usuario puede revisar el resumen de contexto generado por el orquestador antes de aprobar la generación completa del proyecto.
+RF-008,functional,El sistema genera automáticamente las secciones de contexto, requerimientos, stack tecnológico, hitos del proyecto y diagramas mediante agentes especializados.
+RF-009,functional,Un agente orquestador coordina múltiples subagentes especializados en paralelo para generar la documentación del proyecto de forma eficiente.
+RF-010,functional,La generación de contenido por parte de los agentes se transmite al usuario en tiempo real de forma progresiva (streaming).
+RF-011,functional,La documentación generada por el sistema se alinea con los lineamientos técnicos e institucionales de Banorte.
+RF-012,functional,Cada requerimiento generado cuenta con un ID único asignado automáticamente de forma consecutiva y no repetible.
+RF-013,functional,El sistema valida las modificaciones al stack tecnológico propuesto contra las restricciones técnicas de Banorte y rechaza cambios que las violen.
+RF-014,functional,El usuario puede proponer nuevos componentes al stack tecnológico sujeto a validación contra las políticas técnicas de Banorte.
+RF-015,functional,"El sistema genera los hitos del proyecto (Hitos/Milestones) con los campos: id, título, descripción, fase, entregables, tareas, criterios de aceptación, riesgos y estimación de esfuerzo."
+RF-016,functional,El usuario puede proponer nuevos hitos o modificar los hitos existentes del proyecto mediante lenguaje natural.
+RF-017,functional,"El usuario puede interactuar con los diagramas generados: agregar nodos, editar nodos, realizar arrastrar y soltar, y generar múltiples diagramas."
+RF-018,functional,El usuario puede iniciar sesión con sus credenciales institucionales mediante autenticación segura basada en JWT.
+RF-019,functional,El usuario puede exportar la documentación del proyecto en formato PDF y DOCX.
+RF-020,functional,El sistema gestiona el acceso colaborativo a proyectos mediante equipos y roles con permisos configurables (RBAC).
+RF-021,functional,El frontend y el backend se comunican mediante una API REST separada; ambos están contenedorizados y desplegados en GCP.
+RF-022,functional,El sistema utiliza únicamente modelos de IA autorizados por el banco y bloquea instrucciones irrelevantes o ambiguas indicando al usuario cuando su solicitud no es permitida.
+RF-023,functional,El usuario puede generar y modificar diagramas UML y Entidad-Relación mediante código y conversación y exportarlos fuera de la plataforma.
+RF-024,functional,El sistema restringe el acceso únicamente a usuarios autenticados con credenciales institucionales del banco.
+RF-025,functional,"El sistema almacena el perfil del usuario (nombre, rol, correo) con una estructura RBAC para el control de acceso a la información."
+RF-026,functional,"El sistema persiste los proyectos con sus metadatos (título, descripción corta, fecha de creación) vinculados al usuario propietario."
+RF-027,functional,Los documentos del proyecto se almacenan en formato markdown o JSON y pueden recuperarse en su forma original para edición y exportación.
+RF-028,functional,"El sistema almacena el historial conversacional del chat por proyecto, incluyendo mensajes del usuario, respuestas del agente y timestamps."
+RF-029,functional,El sistema almacena artefactos del proyecto (imágenes, documentos, diagramas) con su metadata en el formato adecuado para visualización y edición posterior.
+RF-030,functional,El sistema persiste los diagramas de arquitectura como estructuras de nodos y conexiones editables por proyecto.
+RF-031,functional,El sistema construye sub-contextos por subagente y actualiza o compacta el contexto del proyecto cuando crece para mantener solo la información relevante.
+RF-032,functional,El sistema muestra indicadores de carga dinámicos durante la generación del proyecto y mensajes claros en caso de error con opción de reintento.
+RF-033,functional,El sistema muestra notificaciones visuales (toast) al usuario para informar sobre el resultado de operaciones y errores de forma no intrusiva.
+RF-034,functional,El sistema soporta múltiples usuarios ejecutando orquestadores y subagentes en paralelo con contextos de generación completamente aislados por usuario.
+RF-035,functional,La integración con IA utiliza una interfaz modular que permite cambiar el modelo de IA mediante configuración sin afectar proyectos existentes.
+RF-036,functional,Todas las solicitudes del frontend al backend incluyen un token de autenticación válido; sin él el acceso es denegado.
+RF-037,functional,El sistema registra cada inicio de sesión exitoso y fallido así como las modificaciones y exportaciones realizadas por cada usuario.
+RF-038,functional,"El sistema provee un catálogo de categorías de requerimientos consultable desde el frontend (funcionales, no funcionales, datos, diseño, interfaz, etc.)."
+RF-039,functional,"El sistema almacena los requerimientos del proyecto con id, título, descripción y categoría asociados al proyecto al que pertenecen."
+RF-040,functional,El sistema almacena y muestra los hitos del proyecto (Hitos) con su información de fase, entregables y criterios de aceptación.
+RF-041,functional,"Los administradores pueden gestionar el catálogo de prompts mediante operaciones CRUD sobre assets, revisiones y bindings de agentes, con previsualización del prompt ensamblado."
+RNF-001,non-functional,El sistema aplica rate limiting por dirección IP en el endpoint de inicio de sesión para mitigar ataques de fuerza bruta.
+RNF-002,non-functional,El sistema soporta múltiples usuarios generando proyectos de forma concurrente sin degradación de rendimiento ni errores por saturación.
+RNF-003,non-functional,"El sistema no expone datos sensibles en pantallas, respuestas del backend ni en los registros de actividad; la exportación solo incluye contenido del proyecto."
+RNF-004,non-functional,La aplicación funciona correctamente en los navegadores Google Chrome, Microsoft Edge, Safari y Mozilla Firefox.
+RNF-005,non-functional,La interfaz de la aplicación se adapta adecuadamente a distintos tamaños de pantalla para su uso en dispositivos móviles y tabletas.
+RNF-006,non-functional,La aplicación funciona en los sistemas operativos corporativos autorizados por Banorte sin restricciones ni fallos críticos.
+RNF-007,non-functional,El backend cuenta con pruebas unitarias que cubren las rutas principales de la API y las validaciones de seguridad (autenticación y control de acceso).
+RNF-008,non-functional,"El sistema cuenta con pruebas de integración que cubren los flujos críticos de extremo a extremo (crear proyecto, guardar cambios, generar secciones, exportar)."
+RNF-009,non-functional,El frontend cuenta con pruebas automatizadas para los flujos críticos del sistema (login, creación de proyecto, edición de secciones y exportación).
+RNF-010,non-functional,El sistema ha sido validado mediante pruebas de carga simulando múltiples usuarios concurrentes generando proyectos simultáneamente.
+RNF-011,non-functional,El sistema utiliza una base de datos SQL alojada en la nube para el almacenamiento persistente y escalable de todos los datos del sistema.
+RNF-012,non-functional,La base de datos realiza respaldos automáticos periódicos almacenados en una ubicación segura dentro de la infraestructura en la nube.
+RNF-013,non-functional,El sistema cuenta con procedimientos documentados de recuperación ante fallos que permiten restaurar la operación y los datos a partir de respaldos válidos.
