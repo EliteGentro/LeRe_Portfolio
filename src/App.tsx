@@ -5,6 +5,7 @@ import { Problem } from "./components/Problem";
 import { Value } from "./components/Value";
 import { Requirements } from "./components/Requirements";
 import { Development } from "./components/Development";
+import { Conclusions } from "./components/Conclusions";
 import { EmptySection } from "./components/EmptySection";
 
 const nav: NavItem[] = [
@@ -15,7 +16,7 @@ const nav: NavItem[] = [
   { id: "requerimientos", number: "05", label: "Análisis de requerimientos" },
   { id: "desarrollo", number: "06", label: "Desarrollo e implementación" },
   { id: "pruebas", number: "07", label: "Pruebas de usabilidad" },
-  { id: "conclusiones", number: "08", label: "Conclusiones" },
+  { id: "conclusiones", number: "08", label: "Conclusiones y lecciones" },
   { id: "anexos", number: "09", label: "Anexos" },
 ];
 
@@ -39,13 +40,7 @@ function App() {
           title="Sección reservada."
           hint="Los hallazgos y resultados de las sesiones de prueba se documentarán aquí una vez consolidados."
         />
-        <EmptySection
-          id="conclusiones"
-          number="08"
-          eyebrow="Conclusiones y lecciones aprendidas"
-          title="Sección reservada."
-          hint="Los aprendizajes y conclusiones del equipo se incorporarán en la entrega final del portfolio."
-        />
+        <Conclusions />
         <EmptySection
           id="anexos"
           number="09"

@@ -7,6 +7,8 @@ interface SectionProps {
   eyebrow: string;
   title: string;
   lead?: string;
+  /** Relaxed removes bottom margin on lead so the first child controls vertical rhythm. */
+  leadSpacing?: "default" | "relaxed";
   children: ReactNode;
   bare?: boolean;
 }
@@ -17,6 +19,7 @@ export function Section({
   eyebrow,
   title,
   lead,
+  leadSpacing = "default",
   children,
   bare,
 }: SectionProps) {
@@ -40,7 +43,13 @@ export function Section({
           <span className="eyebrow">{eyebrow}</span>
         </div>
         <h2 className="section-title mb-5">{title}</h2>
-        {lead && <p className="section-lead mb-12">{lead}</p>}
+        {lead && (
+          <p
+            className={`section-lead ${leadSpacing === "relaxed" ? "mb-0" : "mb-12"}`}
+          >
+            {lead}
+          </p>
+        )}
         {!lead && <div className="mb-10" />}
         <div className={bare ? "" : "space-y-8"}>{children}</div>
       </div>

@@ -158,3 +158,76 @@ export const valueProps: ValueProp[] = [
       "JWT, RBAC, rate limiting, validación de dominio institucional y manejo seguro de secretos vía variables de entorno.",
   },
 ];
+
+export interface ConclusionItem {
+  title: string;
+  description: string;
+}
+
+export interface ConclusionBlock {
+  title: string;
+  items: ConclusionItem[];
+}
+
+export const conclusions: ConclusionBlock[] = [
+  {
+    title: "Logros del proyecto",
+    items: [
+      {
+        title: "Cumplimiento del alcance",
+        description:
+          "Se alcanzaron con éxito los objetivos planeados originalmente para el proyecto.",
+      },
+      {
+        title: "Arquitectura multiagente funcional",
+        description:
+          "Se diseñó e implementó eficazmente un sistema multiagentes, estructurado a través de un agente orquestador y subagentes especializados para los módulos de tech stack, requerimientos, hitos y diseño.",
+      },
+      {
+        title: "Desarrollo temprano",
+        description:
+          "El núcleo de esta arquitectura se consolidó de manera óptima durante las primeras semanas de trabajo.",
+      },
+      {
+        title: "Calidad del producto final",
+        description:
+          "Gracias al refinamiento continuo, se entregó un producto visual y funcionalmente superior a las expectativas iniciales.",
+      },
+    ],
+  },
+  {
+    title: "Dificultades enfrentadas",
+    items: [
+      {
+        title: "Complejidad en la especialización de módulos",
+        description:
+          "El principal reto radicó en el desarrollo individual de cada módulo. Al estar distribuidos entre los miembros del equipo, coordinar el esfuerzo y asegurar que el nivel de detalle y optimización fuera homogéneo en todo el sistema requirió una alta exigencia técnica y de gestión.",
+      },
+      {
+        title: "Resistencia al conformismo",
+        description:
+          "Existió la tentación inicial de mantener ciertas funciones en su estado técnico básico. Sin embargo, superar esa zona de confort para buscar la mejora constante fue un desafío que demandó tiempo y esfuerzo extra de cada integrante.",
+      },
+    ],
+  },
+  {
+    title: "Aprendizajes del proceso",
+    items: [
+      {
+        title: "Dominio de nuevas tecnologías",
+        description:
+          "El proyecto sirvió como una plataforma de aprendizaje práctico, permitiendo al equipo dominar el diseño y la implementación de sistemas basados en agentes.",
+      },
+      {
+        title: "Cultura de mejora continua",
+        description:
+          "Se demostró que el detalle, la revisión constante y el compromiso con la calidad no solo refinan la estética visual, sino que potencian directamente la robustez funcional del software.",
+      },
+      {
+        title: "Sinergia y responsabilidad individual",
+        description:
+          "El proceso evidenció que el éxito de un sistema integrado depende directamente de la dedicación y el estándar de calidad que cada miembro imprima en su módulo asignado.",
+      },
+    ],
+  },
+];
