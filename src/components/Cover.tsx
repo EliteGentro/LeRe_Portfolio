@@ -1,5 +1,97 @@
+import type { CSSProperties } from "react";
 import { team, coverImages } from "../data/team";
 import { useReveal } from "../hooks/useReveal";
+
+type ShapeLayer = {
+  className: string;
+  style?: CSSProperties;
+};
+
+type MomentVisual = {
+  background: string;
+  iconBackground: string;
+  shapes: ShapeLayer[];
+};
+
+const brandRed = "var(--color-banorte-red)";
+const redInk = "#7A0016";
+const redDeep = "#9F001C";
+const redMid = "#C80024";
+const brandWash = "rgba(235, 0, 41, ";
+
+const momentVisuals: MomentVisual[] = [
+  {
+    background: `linear-gradient(135deg, ${brandWash}0.12) 0%, ${brandWash}0.03) 52%, rgba(122, 0, 22, 0.14) 100%)`,
+    iconBackground: `linear-gradient(135deg, ${brandRed} 0%, ${redDeep} 100%)`,
+    shapes: [
+      { className: "absolute -right-10 -bottom-12 h-36 w-36 rounded-full opacity-25", style: { background: brandRed } },
+      { className: "absolute left-5 top-5 h-12 w-24 -rotate-12 rounded-full opacity-15", style: { background: redInk } },
+    ],
+  },
+  {
+    background: `linear-gradient(160deg, rgba(255,255,255,0.88) 0%, ${brandWash}0.13) 50%, rgba(159,0,28,0.13) 100%)`,
+    iconBackground: `linear-gradient(145deg, ${brandRed} 0%, ${redInk} 100%)`,
+    shapes: [
+      { className: "absolute -left-8 top-8 h-24 w-24 rotate-45 rounded-[22px] opacity-20", style: { background: brandRed } },
+      { className: "absolute right-6 bottom-5 h-28 w-8 -rotate-[32deg] rounded-full opacity-20", style: { background: redDeep } },
+      { className: "absolute right-16 top-4 h-10 w-10 rounded-full border-[10px] opacity-25", style: { borderColor: brandRed } },
+    ],
+  },
+  {
+    background: `radial-gradient(circle at 20% 25%, ${brandWash}0.18) 0, transparent 34%), linear-gradient(135deg, rgba(255,255,255,0.9), rgba(235,0,41,0.09))`,
+    iconBackground: `linear-gradient(135deg, ${redMid} 0%, ${brandRed} 48%, ${redInk} 100%)`,
+    shapes: [
+      { className: "absolute left-4 bottom-4 h-16 w-16 rounded-full opacity-20", style: { background: redDeep } },
+      { className: "absolute -right-4 top-5 h-20 w-32 rotate-12 rounded-[999px] opacity-20", style: { background: brandRed } },
+      { className: "absolute left-1/2 top-2 h-20 w-3 -rotate-45 rounded-full opacity-25", style: { background: redInk } },
+    ],
+  },
+  {
+    background: `linear-gradient(125deg, ${brandWash}0.08) 0%, rgba(255,255,255,0.92) 42%, ${brandWash}0.15) 100%)`,
+    iconBackground: `linear-gradient(135deg, ${brandRed} 0%, ${redDeep} 58%, ${redInk} 100%)`,
+    shapes: [
+      { className: "absolute -top-8 right-8 h-24 w-24 rounded-full opacity-20", style: { background: brandRed } },
+      { className: "absolute left-6 bottom-6 h-12 w-28 rotate-6 rounded-lg opacity-15", style: { background: redInk } },
+      { className: "absolute right-5 bottom-4 h-14 w-14 rotate-45 rounded-md border-[9px] opacity-20", style: { borderColor: redDeep } },
+    ],
+  },
+  {
+    background: `linear-gradient(145deg, rgba(122,0,22,0.08) 0%, ${brandWash}0.12) 48%, rgba(255,255,255,0.9) 100%)`,
+    iconBackground: `linear-gradient(150deg, ${redInk} 0%, ${brandRed} 100%)`,
+    shapes: [
+      { className: "absolute -left-6 -bottom-7 h-32 w-32 rounded-full opacity-[0.18]", style: { background: brandRed } },
+      { className: "absolute right-6 top-5 h-8 w-32 -rotate-12 rounded-full opacity-20", style: { background: redDeep } },
+      { className: "absolute right-8 bottom-7 h-16 w-16 rotate-[28deg] rounded-[18px] opacity-15", style: { background: redInk } },
+    ],
+  },
+  {
+    background: `radial-gradient(circle at 78% 20%, ${brandWash}0.20) 0, transparent 28%), linear-gradient(135deg, rgba(255,255,255,0.94), rgba(159,0,28,0.11))`,
+    iconBackground: `linear-gradient(135deg, ${brandRed} 0%, ${redMid} 45%, ${redInk} 100%)`,
+    shapes: [
+      { className: "absolute left-8 top-5 h-20 w-20 rotate-45 rounded-[12px] opacity-[0.18]", style: { background: brandRed } },
+      { className: "absolute -right-5 bottom-5 h-16 w-40 -rotate-6 rounded-full opacity-20", style: { background: redDeep } },
+      { className: "absolute left-5 bottom-7 h-12 w-12 rounded-full border-[8px] opacity-25", style: { borderColor: redInk } },
+    ],
+  },
+  {
+    background: `linear-gradient(155deg, ${brandWash}0.16) 0%, rgba(255,255,255,0.86) 45%, rgba(122,0,22,0.12) 100%)`,
+    iconBackground: `linear-gradient(145deg, ${redDeep} 0%, ${brandRed} 56%, ${redInk} 100%)`,
+    shapes: [
+      { className: "absolute right-4 top-4 h-24 w-10 rotate-[24deg] rounded-full opacity-20", style: { background: brandRed } },
+      { className: "absolute -left-10 bottom-4 h-28 w-28 rounded-[30px] rotate-12 opacity-[0.16]", style: { background: redInk } },
+      { className: "absolute left-1/2 bottom-3 h-3 w-28 -translate-x-1/2 rounded-full opacity-25", style: { background: redDeep } },
+    ],
+  },
+  {
+    background: `linear-gradient(135deg, rgba(255,255,255,0.95) 0%, ${brandWash}0.14) 47%, rgba(122,0,22,0.16) 100%)`,
+    iconBackground: `linear-gradient(135deg, ${brandRed} 0%, ${redDeep} 42%, ${redInk} 100%)`,
+    shapes: [
+      { className: "absolute -right-6 top-8 h-28 w-28 rounded-full border-[16px] opacity-25", style: { borderColor: brandRed } },
+      { className: "absolute left-5 bottom-5 h-20 w-20 rotate-45 rounded-[18px] opacity-[0.18]", style: { background: redDeep } },
+      { className: "absolute left-7 top-6 h-8 w-24 rotate-[18deg] rounded-full opacity-20", style: { background: brandRed } },
+    ],
+  },
+];
 
 export function Cover() {
   const { ref, visible } = useReveal<HTMLDivElement>();
@@ -218,61 +310,55 @@ export function Cover() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {coverImages.map((img, i) => (
-              <article
-                key={img.title}
-                className="card card-hover overflow-hidden group"
-              >
-                <div
-                  className="relative aspect-[16/10] overflow-hidden"
-                  style={{
-                    background: `linear-gradient(135deg,
-                      hsl(${img.hue}, 80%, 96%) 0%,
-                      hsl(${(img.hue + 18) % 360}, 70%, 90%) 100%)`,
-                  }}
+            {coverImages.map((img, i) => {
+              const visual = momentVisuals[i % momentVisuals.length];
+
+              return (
+                <article
+                  key={img.title}
+                  className="card card-hover overflow-hidden group"
                 >
                   <div
-                    className="absolute -right-8 -bottom-10 h-32 w-32 rounded-full opacity-30"
-                    style={{ background: `hsl(${img.hue}, 78%, 56%)` }}
-                    aria-hidden
-                  />
-                  <div
-                    className="absolute left-5 top-5 h-14 w-14 rounded-2xl opacity-20"
-                    style={{ background: `hsl(${(img.hue + 28) % 360}, 82%, 50%)` }}
-                    aria-hidden
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center p-5">
-                    <div
-                      className="flex h-24 w-24 items-center justify-center rounded-[24px] border border-white/70 text-white shadow-sm backdrop-blur-sm transition-transform duration-300 group-hover:scale-105"
-                      style={{
-                        background: `linear-gradient(135deg,
-                          hsl(${img.hue}, 82%, 45%) 0%,
-                          hsl(${(img.hue + 28) % 360}, 78%, 38%) 100%)`,
-                      }}
-                    >
-                      <MomentIcon icon={img.icon} />
+                    className="relative aspect-[16/10] overflow-hidden"
+                    style={{ background: visual.background }}
+                  >
+                    {visual.shapes.map((shape, shapeIndex) => (
+                      <div
+                        key={shapeIndex}
+                        className={shape.className}
+                        style={shape.style}
+                        aria-hidden
+                      />
+                    ))}
+                    <div className="absolute inset-0 flex items-center justify-center p-5">
+                      <div
+                        className="flex h-24 w-24 items-center justify-center rounded-[24px] border border-white/70 text-white shadow-sm backdrop-blur-sm transition-transform duration-300 group-hover:scale-105"
+                        style={{ background: visual.iconBackground }}
+                      >
+                        <MomentIcon icon={img.icon} />
+                      </div>
                     </div>
+                    <span
+                      className="absolute top-3 right-3 text-[10px] uppercase tracking-[0.18em] px-2 py-1 rounded-md bg-white/80 text-content-2"
+                      style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                  <span
-                    className="absolute top-3 right-3 text-[10px] uppercase tracking-[0.18em] px-2 py-1 rounded-md bg-white/80 text-content-2"
-                    style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <div className="p-5">
-                  <h4
-                    className="text-[15px] text-dark-gray mb-1.5"
-                    style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                  >
-                    {img.title}
-                  </h4>
-                  <p className="text-[13px] text-banorte-gray leading-[1.55]">
-                    {img.caption}
-                  </p>
-                </div>
-              </article>
-            ))}
+                  <div className="p-5">
+                    <h4
+                      className="text-[15px] text-dark-gray mb-1.5"
+                      style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                    >
+                      {img.title}
+                    </h4>
+                    <p className="text-[13px] text-banorte-gray leading-[1.55]">
+                      {img.caption}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>
