@@ -148,8 +148,8 @@ export function Cover() {
         </div>
 
         {/* Hero */}
-        <div className="grid lg:grid-cols-12 gap-10 items-end">
-          <div className="lg:col-span-8">
+        <div className="grid xl:grid-cols-12 gap-10 items-start">
+          <div className="xl:col-span-8 min-w-0">
             <p
               className="text-[12px] uppercase tracking-[0.22em] text-content-2 mb-4"
               style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
@@ -174,21 +174,21 @@ export function Cover() {
             </p>
           </div>
 
-          <div className="lg:col-span-4">
-            <div className="card p-6">
+          <div className="xl:col-span-4 w-full min-w-0 max-w-md xl:max-w-none">
+            <div className="card p-5 sm:p-6">
               <div className="eyebrow mb-3">Equipo · Cocoly</div>
-              <ul className="grid gap-3">
+              <ul className="grid gap-2.5 sm:gap-3">
                 {team.map((m, i) => (
                   <li
                     key={m.name}
-                    className="flex items-center gap-3 opacity-0"
+                    className="flex items-start gap-3 opacity-0"
                     style={{
                       animation: `fadeUp 0.6s cubic-bezier(0.2,0,0,1) both`,
                       animationDelay: `${200 + i * 90}ms`,
                     }}
                   >
                     <div
-                      className="flex items-center justify-center w-9 h-9 rounded-full text-white text-[12px] font-semibold shrink-0"
+                      className="flex items-center justify-center w-9 h-9 rounded-full text-white text-[12px] font-semibold shrink-0 mt-0.5"
                       style={{
                         background:
                           "linear-gradient(135deg, var(--color-banorte-red), var(--color-alert))",
@@ -198,26 +198,20 @@ export function Cover() {
                     >
                       {m.initials}
                     </div>
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1">
                       <div
-                        className="text-[14px] text-dark-gray truncate"
+                        className="text-[13px] sm:text-[14px] text-dark-gray leading-snug"
                         style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                       >
                         {m.name}
                       </div>
-                      <div className="text-[12px] text-content-2 truncate">
+                      <div className="mt-0.5 text-[11px] sm:text-[12px] text-content-2 leading-[1.45]">
                         {m.role}
                       </div>
                     </div>
                   </li>
                 ))}
               </ul>
-              <p
-                className="mt-5 pt-4 border-t border-bg-1 text-[11px] text-content-2 uppercase tracking-[0.18em]"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                Placeholder · sustituir con nombres reales
-              </p>
             </div>
           </div>
         </div>

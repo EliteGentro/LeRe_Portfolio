@@ -4,16 +4,32 @@ export interface TeamMember {
   initials: string;
 }
 
-/**
- * Team roster. Update with real names when available — placeholders kept
- * professional per the brief (no fabricated identities beyond the team name).
- */
 export const team: TeamMember[] = [
-  { name: "Integrante 1", role: "Product & Strategy", initials: "I1" },
-  { name: "Integrante 2", role: "Backend & AI", initials: "I2" },
-  { name: "Integrante 3", role: "Frontend & UX", initials: "I3" },
-  { name: "Integrante 4", role: "Data & Cloud", initials: "I4" },
-  { name: "Integrante 5", role: "QA & DevOps", initials: "I5" },
+  {
+    name: "Humberto Genaro Cisneros Salinas",
+    role: "SCRUM Master, desarrollador, QA y líder de la configuración",
+    initials: "HC",
+  },
+  {
+    name: "Eduardo Cepeda Torres",
+    role: "Desarrollador, QA, diseñador, DevOps",
+    initials: "EC",
+  },
+  {
+    name: "Jorge Adrian de la Garza Flores",
+    role: "Desarrollador, QA",
+    initials: "JG",
+  },
+  {
+    name: "Enmanuel Rivas Barinas",
+    role: "Desarrollador, QA y apoyo en validación de requerimientos",
+    initials: "ER",
+  },
+  {
+    name: "Arnoldo Marcelo Sias Saucedo",
+    role: "Desarrollador, QA",
+    initials: "AS",
+  },
 ];
 
 export interface CoverImage {
